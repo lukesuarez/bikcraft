@@ -1,12 +1,36 @@
+:root {
+  --cor-primaria: #e21;
+  --cor-primaria-escura: #900;
+  --fundo1: #f7f7f7;
+  --fundo2: #ffffff;
+  --texto: #000000;
+  --texto-logo: #000000;
+  --cor-subtitulo: rgba(0, 0, 0, 0.2);
+  --onda: url("./img/onda-clara.svg");
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --fundo1: #111;
+    --fundo2: #000;
+    --texto: #ffffff;
+    --texto-logo: #e21;
+    --cor-subtitulo: rgba(255, 255, 255, 0.2);
+    --cor-botao: #fff;
+    --onda: url("./img/onda-escura.svg");
+  }
+}
+
 /* Estilos Gerais */
 body {
   font-family: Arial, Helvetica, sans-serif;
   margin: 0px;
-  background: #f7f7f7;
+  background-color: var(--fundo1);
   display: grid;
   gap: 3.75rem;
   justify-items: center;
   margin-top: 3.75rem;
+  color: var(--texto);
 }
 
 img {
@@ -50,20 +74,20 @@ p {
 }
 
 .menu a {
-  background: #ffffff;
+  background: var(--fundo1);
   padding: 1rem 2rem;
   border-radius: 0.25rem;
   border: 0.06rem solid #f1f1f4;
-  color: #000000;
+  color: var(--texto);
   text-transform: uppercase;
   font-weight: bold;
   display: inline-block;
 }
 
 .menu a:hover {
-  border: 0.06rem solid #e21;
+  border: 0.06rem solid var(--cor-primaria);
   transition: 0.8s;
-  color: #e21;
+  color: var(--cor-primaria);
 }
 
 .conteudo {
@@ -73,7 +97,7 @@ p {
 }
 
 .introducao {
-  background: #ffffff;
+  background: var(--fundo2);
   padding: 2.5rem;
   text-align: right;
   position: relative;
@@ -104,7 +128,7 @@ p {
 
 .btn {
   background: #ee2211;
-  color: #ffffff;
+  color: var(--cor-botao);
   text-decoration: none;
   padding: 1rem 2rem;
   display: inline-block;
@@ -113,7 +137,7 @@ p {
 
 .btn:hover {
   transition: 0.8s;
-  background-color: #900;
+  background-color: var(--cor-primaria-escura);
 }
 
 .subtitulo {
@@ -121,14 +145,14 @@ p {
   padding: 2.5rem;
   text-align: right;
   text-transform: uppercase;
-  color: rgb(0, 0, 0, 0.2);
+  color: var(--cor-subtitulo);
   align-self: center;
-  background-image: url(img/onda.svg);
+  background-image: var(--onda);
   /* word-break: break-all; */
 }
 
 .vantagens {
-  background: #fff;
+  background: var(--fundo2);
   padding: 2.5rem;
 }
 
@@ -140,11 +164,11 @@ p {
   border-left: 0.25rem solid transparent;
 }
 .vantagens-item:nth-child(odd) {
-  background-color: #f7f7f7;
+  background-color: var(--fundo1);
 }
 
 .vantagens-item:hover {
-  border-left: 0.25rem solid #900;
+  border-left: 0.25rem solid var(--cor-primaria-escura);
   transform: 0.8s;
 }
 
@@ -155,7 +179,7 @@ p {
 .rodape {
   width: 100%;
   text-align: center;
-  background: #fff;
+  background: var(--fundo2);
   padding: 2rem;
   box-sizing: border-box;
 }
